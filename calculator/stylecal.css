@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{ 
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif;
+box-sizing: border-box;
+} 
+body{
+background-image: url(calci.avif);
+background-position: fixed;
+background-size: cover;
+object-fit: contain;
+background-repeat: no-repeat;
+ }
+
+
+
+
+div h1{
+padding-left: 50px;
+padding-bottom: 50px;
+}
+
+
+.container{
+width: 80%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+padding-left: 100px;
+
+
+
+}
+.calculator{
+padding: 20px;
+border-radius: 10px;
+border-color: #fff;
+border-style: groove;
+}
+.calculator form input{
+
+border: 0;
+outline: 0;
+width: 60px;
+height: 60px;
+border-radius: 10px;
+box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
+background: transparent;
+font-size: 20px;
+color: #fff;
+cursor: pointer;
+margin: 10px;
+}
+form .display{
+display: flex;
+justify-content: flex-end;
+margin: 20px 0;
+border-radius: 5px;
+border-style: groove;
+border-color: #060606;
+}
+form .display input{
+  text-align: right;
+  flex: 1;
+  font-size: 45px;
+  box-shadow: none;
+}
+form input.operator{
+color: #33ffd8;
+}
+
+.text
+{
+display: flex;
+align-items:center;
+justify-content: center;
+
+}

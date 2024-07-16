@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    background-color: rgb(20, 8, 8);
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.column{
+    float: left;
+    width: 33.31%;
+    padding: 5px;
+}
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+h1{
+    color: rgb(6,108,155);
+}
+
+   a.between{
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+   }
+   main {
+    padding: 2rem;
+   }
+   section {
+     margin-right: 0px;
+     margin-left: 0px;
+   }
+   img:hover{
+    cursor: pointer;
+
+   }
+   img:active{
+    -ms-zoom-animation: default;
+   }
+
+   
