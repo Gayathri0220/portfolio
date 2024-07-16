@@ -86,11 +86,11 @@ body{
     .home-left{
         display: flex;
         flex-wrap: wrap;
-        margin-right: 70px;
+    
         vertical-align: top;
         width: 400px;
         height: 400px;
-        padding-left: 300px;
+        
         align-items: center;
     }
     .home-right{
@@ -98,7 +98,7 @@ body{
         height: 400px;
         display: inline-block; 
         color: rgb(6, 108, 155);
-        margin-left: 200px;
+        margin-left: 50px;
         margin-top: 150px;
         
     }
