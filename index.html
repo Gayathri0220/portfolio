@@ -39,7 +39,8 @@
                 <a href="#contact">Contact</a>
                 
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
-                
+                 <a href="javascript:void(0);" class="closebtn" onclick="closeMenu()"><i class="fa fa-times"></i></a>
+          
                
             
         </div>
@@ -64,10 +65,12 @@
                     <p >I'm a <span class="typing">Web Developer!</span></p>
                 </div>
             </div> 
-            </div>
-            <div class="about-me">
-                As an aspiring Information Technology professional, I am a dedicated and proactive student with a keen passion for innovation and collaborative problem-solving. My academic journey has equipped me with a solid foundation in IT concepts and programming languages, enabling me to contribute effectively to team projects and organizational goals. I thrive in dynamic environments where my creativity and analytical skills drive innovative solutions. Committed to continuous learning, I am eager to tackle new challenges and make a significant impact in the ever-evolving field of technology.
-            </div>
+        </div>
+        <br><br><br>
+        <div class="about-me">
+            As an aspiring Information Technology professional, I am a dedicated and proactive student with a keen passion for innovation and collaborative problem-solving. My academic journey has equipped me with a solid foundation in IT concepts and programming languages, enabling me to contribute effectively to team projects and organizational goals. I thrive in dynamic environments where my creativity and analytical skills drive innovative solutions. Committed to continuous learning, I am eager to tackle new challenges and make a significant impact in the ever-evolving field of technology.
+        </div>
+        
     </section>
     <br>
     <!--skills-->
@@ -205,47 +208,74 @@
    <section id="certificates"></section>
 
     <!--contact-->
-    <section id="contact">
-        <div class="contact">
+      <section id="contact">
+        <div class="contact-container">
             <div class="c-m">Contact Me</div>
-            <div class="input" >
-                <form class="contact" name="form">
-                    Name:<br><input type="text" name="Name" sytle="width: 150px;" placeholder="Enter Your Name:" required><br><br>
-                    Email:<br><input type="text" name="Email" sytle="width: 150px;" placeholder="Enter Your Email:" required><br><br>
-
-                    Description:<br/>
-                    <textarea rows="5" cols="50" name="description" placeholder="Enter description here....">
-                    </textarea><br><br>
-                    <button type="submit" >Submit
-                    </button>
-                    </form><br>
-                     <p>
-                     Thank you for visiting my portfolio. If you would like to get in touch, you can reach me at:
-                     </p>
-                     <div class="icons">
-                     <a class="social-icon" href="mailto:gayathrisekar20022004@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                     <a class="social-icon" href="https://www.linkedin.com/in/gayathri-sekar-278b0b28a" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                     <a class="social-icon" href="https://github.com" target="_blank"><i class="fab fa-github-square"></i></a>
-                     <a class="social-icon" href=" https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                     </div>
-            </div>   
+            <form class="contact-form" name="form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="Name" placeholder="Enter Your Name:" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="Email" placeholder="Enter Your Email:" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5" placeholder="Enter description here...."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p>Thank you for visiting my portfolio. If you would like to get in touch, you can reach me at:</p>
+            <div class="icons">
+                <a class="social-icon" href="mailto:gayathrisekar20022004@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a class="social-icon" href="https://www.linkedin.com/in/gayathri-sekar-278b0b28a" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a class="social-icon" href="https://github.com" target="_blank"><i class="fab fa-github-square"></i></a>
+                <a class="social-icon" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
         </div>
-    </section> 
+    </section>
     <!--footer-->
     <footer>
         <p>&copy; 2024 Gayathri. All rights reserved.
         </p>
     </footer>
     <script>
-        function myFunction(){
-            var x=document.getElementById("mytopnav");
-            if (x.className==="topnav"){
-                x.className+="responsive";
-            }else{
-                x.className="topnav";
-            }
+       function toggleMenu() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+        hidePortfolioAndIcon();
+    } else {
+        x.className = "topnav";
+        showPortfolioAndIcon();
+    }
+}
+
+function hidePortfolioAndIcon() {
+    var x = document.getElementById("mytopnav");
+    document.getElementById("portfolio").style.display = "none";
+    var icons = x.getElementsByClassName("icon");
+    for (var i = 0; i < icons.length; i++) {
+        icons[i].style.display = "none";
+    }
+}
+
+function showPortfolioAndIcon() {
+    var x = document.getElementById("mytopnav");
+    document.getElementById("portfolio").style.display = "block";
+    var icons = x.getElementsByClassName("icon");
+    for (var i = 0; i < icons.length; i++) {
+        icons[i].style.display = "block";
+    }
+}
+
+function closeMenu() {
+    var x = document.getElementById("mytopnav");
+    x.className = "topnav";
+    var links = x.getElementsByTagName("a");
+    for (var i = 1; i < links.length - 1; i++) {
+        if (links[i].className !== "icon") {
+            links[i].className = links[i].className.replace(" show", "");
         }
-    </script>  
+    }
+    showPortfolioAndIcon();
+}
+    </script>
 
     
 </body>
