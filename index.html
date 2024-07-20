@@ -26,25 +26,24 @@
         
 </head>
 <body>
-    <section id="header">
+   <section id="header">
+        
         <div class="topnav" id="mytopnav">
             
-                <a id="portfolio" class="active" >Portfolio</a>
-                <a href="index.html">About-me</a>
+                <a id="portfolio"class="active" >Portfolio</a>
+                <a href="#about-me">About-me</a>
                
                 <a href="#skills">Skills</a> 
                 <a href="#project">Projects</a>
                 <a href="resume.html">Resume</a>
                 <a href="certificates/certificates.html">Certificates</a>
                 <a href="#contact">Contact</a>
+                <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
+        <a href="javascript:void(0);" class="closebtn" onclick="closeMenu()"><i class="fa fa-times"></i></a>
                 
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
-                 <a href="javascript:void(0);" class="closebtn" onclick="closeMenu()"><i class="fa fa-times"></i></a>
-          
                
             
         </div>
-       
        
     </section>
         
@@ -235,7 +234,7 @@
         </p>
     </footer>
     <script>
-       function toggleMenu() {
+        function toggleMenu() {
     var x = document.getElementById("mytopnav");
     if (x.className === "topnav") {
         x.className += " responsive";
@@ -275,6 +274,7 @@ function closeMenu() {
     }
     showPortfolioAndIcon();
 }
+
     </script>
 
     
