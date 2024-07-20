@@ -234,46 +234,46 @@
         </p>
     </footer>
     <script>
-        function toggleMenu() {
-    var x = document.getElementById("mytopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-        hidePortfolioAndIcon();
-    } else {
-        x.className = "topnav";
-        showPortfolioAndIcon();
-    }
-}
-
-function hidePortfolioAndIcon() {
-    var x = document.getElementById("mytopnav");
-    document.getElementById("portfolio").style.display = "none";
-    var icons = x.getElementsByClassName("icon");
-    for (var i = 0; i < icons.length; i++) {
-        icons[i].style.display = "none";
-    }
-}
-
-function showPortfolioAndIcon() {
-    var x = document.getElementById("mytopnav");
-    document.getElementById("portfolio").style.display = "block";
-    var icons = x.getElementsByClassName("icon");
-    for (var i = 0; i < icons.length; i++) {
-        icons[i].style.display = "block";
-    }
-}
-
-function closeMenu() {
-    var x = document.getElementById("mytopnav");
-    x.className = "topnav";
-    var links = x.getElementsByTagName("a");
-    for (var i = 1; i < links.length - 1; i++) {
-        if (links[i].className !== "icon") {
-            links[i].className = links[i].className.replace(" show", "");
-        }
-    }
-    showPortfolioAndIcon();
-}
+               function toggleMenu() {
+                    var x = document.getElementById("mytopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                        hidePortfolioAndIcon();
+                    } else {
+                        x.className = "topnav";
+                        showPortfolioAndIcon();
+                    }
+                }
+                
+                function hidePortfolioAndIcon() {
+                    var x = document.getElementById("mytopnav");
+                    document.getElementById("portfolio").style.display = "none";
+                    var icons = x.getElementsByClassName("icon");
+                    for (var i = 0; i < icons.length; i++) {
+                        icons[i].style.display = "none";
+                    }
+                }
+                
+                function showPortfolioAndIcon() {
+                    var x = document.getElementById("mytopnav");
+                    document.getElementById("portfolio").style.display = "block";
+                    var icons = x.getElementsByClassName("icon");
+                    for (var i = 0; i < icons.length; i++) {
+                        icons[i].style.display = "block";
+                    }
+                }
+                
+                function closeMenu() {
+                    var x = document.getElementById("mytopnav");
+                    x.className = "topnav";
+                    var links = x.getElementsByTagName("a");
+                    for (var i = 1; i < links.length - 1; i++) {
+                        if (links[i].className !== "icon") {
+                            links[i].className = links[i].className.replace(" show", "");
+                        }
+                    }
+                    showPortfolioAndIcon();
+                }
 
     </script>
 
