@@ -11,13 +11,13 @@ body{
         
         
     }
-    #header{
+#header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 20px 80px;
         background-color: black;
-        box-shadow: 0 5px 15px rgba(6,108,155, 0.6);
+        box-shadow: 0 5px 15px rgba(6, 108, 155, 0.6);
         z-index: 999;
         position: sticky;
         top: 0;
@@ -26,164 +26,216 @@ body{
         border-color: rgb(6, 108, 155);
         border-style: solid;
     }
-   .topnav{
+    
+    .topnav {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
     }
     
-    .topnav  a{
+    .topnav a {
         text-decoration: none;
         font-size: 20px;
         font-weight: 600;
-        color:rgb(6, 108, 155);
+        color: rgb(6, 108, 155);
         transition: 0.3s ease;
         display: flex;
         flex-wrap: wrap;
         padding: 0 60px;
         position: relative;
         justify-content: space-between;
-        
-        
     }
-    .topnav  a:hover{ 
+    
+    .topnav a:hover {
         color: #f6f0f1;
     }
-    #portfolio{
-        display: none;
+    
+    #portfolio {
+        display: block;
     }
     
-    .topnav .icon{
-        display: none;
+    .topnav .icon {
+        display: block;
+        font-size: 24px;
+        color: rgb(6, 108, 155);
+        padding: 10px;
     }
-    @media screen and (max-width:600px) {
-        .topnav a:not(:first-child){
+    
+    .topnav .closebtn {
+        display: none;
+        font-size: 24px;
+        color: rgb(6, 108, 155);
+        padding: 10px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .topnav a {
             display: none;
         }
-        #portfolio{
+    
+        .topnav .icon {
             display: block;
         }
-
-        .topnav a.icon{
-            float: right;
+    
+        #portfolio {
             display: block;
-           
         }
-        
-    }
-    @media screen and (max-width:600px) {
+    
         .topnav.responsive {
             position: relative;
+            flex-direction: column;
+            align-items: flex-start;
         }
-        .topnav.responsive a.icon{
-            position: absolute;
-            right: 0;
-            top: 0;
+    
+        .topnav.responsive .icon {
+            display: none;
         }
-        .topnav.responsive a{
-            float: none;
+    
+        .topnav.responsive .closebtn {
+            display: block;
+        }
+    
+        .topnav.responsive a {
             display: block;
             text-align: left;
-            
-            
+            width: 100%;
+            animation: fadeIn 0.5s forwards;
         }
-        
+    
+        .topnav.responsive a:not(.closebtn) {
+            display: block;
+        }
+    
+        .topnav.responsive #portfolio {
+            display: none;
+        }
     }
     
-  
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
     
 /*home*/
     
-    .home{
-        display: flex;
-        flex-direction: row;
-        margin-left: 50px;
-        margin-right: 50px;
-        flex-wrap: wrap;
-        align-items: center;
-        
-    }
-    .profile-pic{
-        display: inline-block;
-        width: 300;
-        height: 300;
-        border-radius: 50%;
-        object-position: center;
-        object-fit: contain;
-        border-style: solid;
-        border-color: rgb(6, 108, 155);
-        box-shadow: 0px 0px 20px rgba(76, 188, 236, 0.9);
-    }
-    .home-left{
-        display: flex;
-        flex-wrap: wrap;
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    border-style: solid;
+    border-color: rgb(6, 108, 155);
+    box-shadow: 0px 0px 20px rgba(76, 188, 236, 0.9);
+}
+
+.home-left,
+.home-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-right {
+    margin-left: 50px;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: 600;
+    font-family: "Roboto Mono", monospace;
+    margin-top: 10px;
+}
+
+.domain {
+    font-size: 30px;
+    font-weight: 400;
+    font-family: "Roboto Mono", monospace;
     
-        vertical-align: top;
-        width: 400px;
-        height: 400px;
-        
-        align-items: center;
-    }
-    .home-right{
-        width: 400px;
-        height: 400px;
-        display: inline-block; 
-        color: rgb(6, 108, 155);
-        margin-left: 50px;
-        margin-top: 150px;
-        
-    }
-    .name{
-        height: 150px;
-        margin-top: 2px;
-        font-size: 50px;
-        margin-top: 10px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        font-weight: 600;
-        font-family: "Roboto Mono", monospace;
-        font-size: 60;
-        
-    }
-    .domain{
-        display: flex;
-        font-size: 30px;
-        font-weight: 400;
-        padding-left: 3px;
+}
 
-    }
-    .typing{
-        position: relative;
-    }
-    .typing::after{
-        content: "|";
-        position: absolute;
-        right: 0;
-        color: white;
-        background-color: black;
-        width: 100%;
-        animation: typing 3s steps(45) alternate infinite, line 1s infinite;
+.typing {
+    position: relative;
+}
 
-    }
-    @keyframes typing{
-        to{
-            width: 0;
-        }
-    }
-    @keyframes line{
-        50%{
-            color: transparent;
-        }
-    }
-    .about-me{
-        font-size: 22px;
-        text-align: justify; 
-        margin-left: 50px;
-        margin-right: 50px;
-        font-family: "Roboto Mono", monospace;
+.typing::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    color: white;
+    background-color: black;
+    width: 100%;
+    animation: typing 3s steps(45) alternate infinite, line 1s infinite;
+}
 
+@keyframes typing {
+    to {
+        width: 0;
     }
+}
+
+@keyframes line {
+    50% {
+        color: transparent;
+    }
+}
+
+.about-me {
+    font-size: 22px;
+    text-align: justify;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: "Roboto Mono", monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        
+    }
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .home-right {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .name {
+        font-size: 40px;
+    }
+
+    .domain {
+        font-size: 25px;
+    }
+
+    .about-me {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+    
    
 /*skills*/
 #skills{
@@ -353,54 +405,75 @@ body{
     
 }
 /*contacts*/
-#contact{
+#contact {
     margin-top: 120px;
     font-family: "Roboto Mono", monospace;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
 }
-.contact{  
-    margin-left: 300px;
-    margin-right: 150px;
-    
+
+.contact-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
-.c-m{
-    
+
+.c-m {
     font-size: 45px;
-    display: flex;
+    margin-bottom: 20px;
+    text-align: left;
 }
-.input {
-   
-    
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
     font-size: 18px;
-    justify-content: space-between;
-    font-family: "Roboto Mono", monospace;
 }
-.input p{
-    margin-left: 300px;
-    display: flex;
+
+.contact-form label {
+    margin-top: 10px;
+    text-align: left;
 }
-button{
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
     cursor: pointer;
     padding: 5px 10px;
     font-family: "Roboto Mono", monospace;
+    align-self: flex-start;
+    margin-top: 10px;
 }
-.social-icon{
+
+.social-icon {
     color: #e4d2d2;
     transition: color 0.2s;
     text-decoration: none;
     margin: 0 5px;
-    align-items: center;
-  }
-  .social-icon:hover{
-      color: rgb(6, 108, 155);
-  }
-  .icons{
-    margin-left: 300px;
+}
+
+.social-icon:hover {
+    color: rgb(6, 108, 155);
+}
+
+.icons {
     margin-top: 25px;
     font-size: 20px;
-    margin-bottom: 50px;
-  }
-
+    display: flex;
+    justify-content: center;
+}
+/*footer*/
   footer {
     background-color:black;
     color: rgb(6, 108, 155);
