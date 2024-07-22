@@ -22,7 +22,8 @@
     <link rel="stylesheet"
         href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
         
 </head>
 <body>
@@ -35,7 +36,7 @@
                
                 <a href="#skills">Skills</a> 
                 <a href="#project">Projects</a>
-                <a href="resume.html">Resume</a>
+                <a href="resume.jpg">Resume</a>
                 <a href="certificates/certificates.html">Certificates</a>
                 <a href="#contact">Contact</a>
                 <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
@@ -63,7 +64,13 @@
                 <div class="domain">
                     <p >I'm a <span class="typing">Web Developer!</span></p>
                 </div>
+                <div class="download-resume" >
+                    <a href="resume.jpg" download>
+                        <button class="resume-button">Download Resume</button>
+                    </a>
+                </div>
             </div> 
+             <img src="sun.png" id="icon">
         </div>
         <br><br><br>
         <div class="about-me">
@@ -234,48 +241,84 @@
         </p>
     </footer>
     <script>
-               function toggleMenu() {
-                    var x = document.getElementById("mytopnav");
-                    if (x.className === "topnav") {
-                        x.className += " responsive";
-                        hidePortfolioAndIcon();
-                    } else {
-                        x.className = "topnav";
-                        showPortfolioAndIcon();
-                    }
-                }
-                
-                function hidePortfolioAndIcon() {
-                    var x = document.getElementById("mytopnav");
-                    document.getElementById("portfolio").style.display = "none";
-                    var icons = x.getElementsByClassName("icon");
-                    for (var i = 0; i < icons.length; i++) {
-                        icons[i].style.display = "none";
-                    }
-                }
-                
-                function showPortfolioAndIcon() {
-                    var x = document.getElementById("mytopnav");
-                    document.getElementById("portfolio").style.display = "block";
-                    var icons = x.getElementsByClassName("icon");
-                    for (var i = 0; i < icons.length; i++) {
-                        icons[i].style.display = "block";
-                    }
-                }
-                
-                function closeMenu() {
-                    var x = document.getElementById("mytopnav");
-                    x.className = "topnav";
-                    var links = x.getElementsByTagName("a");
-                    for (var i = 1; i < links.length - 1; i++) {
-                        if (links[i].className !== "icon") {
-                            links[i].className = links[i].className.replace(" show", "");
-                        }
-                    }
-                    showPortfolioAndIcon();
-                }
+       function toggleMenu() {
+    var x = document.getElementById("mytopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+        hidePortfolioAndIcon();
+    } else {
+        x.className = "topnav";
+        showPortfolioAndIcon();
+    }
+}
+
+function hidePortfolioAndIcon() {
+    var x = document.getElementById("mytopnav");
+    document.getElementById("portfolio").style.display = "none";
+    var icons = x.getElementsByClassName("icon");
+    for (var i = 0; i < icons.length; i++) {
+        icons[i].style.display = "none";
+    }
+}
+
+function showPortfolioAndIcon() {
+    var x = document.getElementById("mytopnav");
+    document.getElementById("portfolio").style.display = "block";
+    var icons = x.getElementsByClassName("icon");
+    for (var i = 0; i < icons.length; i++) {
+        icons[i].style.display = "block";
+    }
+}
+
+function closeMenu() {
+    var x = document.getElementById("mytopnav");
+    x.className = "topnav";
+    var links = x.getElementsByTagName("a");
+    for (var i = 1; i < links.length - 1; i++) {
+        if (links[i].className !== "icon") {
+            links[i].className = links[i].className.replace(" show", "");
+        }
+    }
+    showPortfolioAndIcon();
+}
+    </script>
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function(){
+            document.body.classList.toggle("light-theme");
+            if(document.body.classList.contains("light-theme")){
+                icon.src="moon.png";
+            }else{
+                icon.src="sun.png";
+            }
+        
+        }
+    </script>
+    
+     <a href="#" id="back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <script>
+        // JavaScript for "Back to Top" functionality
+window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('back-to-top');
+    if (window.pageYOffset > 100) {
+        backToTop.style.display = 'flex'; // Changed to 'flex' to center the icon
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+
+document.getElementById('back-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
     </script>
+    
 
     
 </body>
